@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <title>Walker Simpson's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  </head>
+  <body>
+<div class="header">
+  <h1>Walker Simpson's Portfolio</h1>
+  <div class="header-icons">
+    <a href="https://www.linkedin.com/in/walker-simpson-a524122a1" target="_blank" aria-label="LinkedIn">
+      <i class="fa-brands fa-linkedin"></i>
+    </a>
+    <a href="https://github.com/WalkerSimpson1" target="_blank" aria-label="GitHub">
+      <i class="fa-brands fa-github"></i>
+    </a>
+    <a href="mailto:walkerwusimpson@gmail.com" aria-label="Email">
+      <i class="fa-solid fa-envelope"></i>
+    </a>
+  </div>
+</div>
+    <div class ="navstrip">
+    <nav>
+        <ul>
+          <li id="datasci">Data Science
+            <ul class="dropdown">
+              <li><span>Weekday|Weekend London pollution comparison</span><img class="status-icon" src="complete.png" alt="complete"></li>
+              <li><span>Peak-Offpeak Tube trip-time comparison</span><img class="status-icon" src="complete.png" alt="complete"></li>
+              <li><span>Regression analysis over multiple APIs to determine my first car</span><img class="status-icon" src="in-progress.png" alt="in progress"></li>
+        </ul>
+        </li>
+          <li id="engineering">Engineering
+            <ul class="dropdown">
+            <li><span>Adding a live animated oscilloscope to my headphones</span><img class="status-icon" src="in-progress.png" alt="in progress"></li>
+        </ul>
+        </li>
+          <li id="polisci">Political Science
+            <ul class = "dropdown">
+              <li><span>Legislative Tracking of UAS Civillian & Military Policy</span><img class="status-icon" src="in-progress.png" alt="in progress"></li>
+            </ul>
+          </li>
+          <li id="other">Other</li>
+        </ul>
+    </nav>
+    </div>
+    <div class="main">
+      <div class="main-content">
+      <p>-Currently in process of creating welcome page and specific project-pages -</p>
+      </div>
+      </div>
+    <script>
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('nav')) {
+          closeAll();
+        }
+      });
+
+      function closeAll() {
+        document.querySelectorAll('nav > ul > li').forEach(item => {
+          const dropdown = item.querySelector('.dropdown');
+          if (dropdown) dropdown.style.maxHeight = '0';
+          item.classList.remove('hide-arrow', 'open', 'dimmed');
+        });
+      }
+
+      document.querySelectorAll('nav > ul > li').forEach(item => {
+        item.addEventListener('click', () => {
+          const isOpen = item.classList.contains('open');
+
+          closeAll(); 
+
+          if (!isOpen) {
+            const dropdown = item.querySelector('.dropdown');
+            if (!dropdown) return; 
+
+            dropdown.style.maxHeight = dropdown.scrollHeight + 'px';
+            item.classList.add('open', 'hide-arrow');
+            document.querySelectorAll('nav > ul > li').forEach(other => {
+              if (other !== item) other.classList.add('dimmed');
+            });
+          }
+        });
+      });
+</script>
+    <div class="footer">
+      Coded by Walker - <a href="https://github.com/WalkerSimpson1/WalkerSimpson1.github.io" target="_blank">Website Repository</a>
+    </div>
+  </body>
+</html>
