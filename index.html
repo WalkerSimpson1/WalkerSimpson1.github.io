@@ -5,14 +5,17 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Source+Serif+4:opsz,wght@8..60,400;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
     <title>Walker Simpson's Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   </head>
   <body>
 <div class="header">
-  <h1>Walker Simpson's Portfolio</h1>
+  <div class="header-text">
+    <h1>Walker Simpson</h1>
+    <p class="header-tagline">Politics & Data Science — London School of Economics</p>
+  </div>
   <div class="header-icons">
     <a href="https://www.linkedin.com/in/walker-simpson-a524122a1" target="_blank" aria-label="LinkedIn">
       <i class="fa-brands fa-linkedin"></i>
@@ -25,36 +28,59 @@
     </a>
   </div>
 </div>
-    <div class ="navstrip">
-    <nav>
+    <div class = "main">
+    <nav class = "index-nav">
+      <p class = "nav-heading">Browse by Category</p>
+      <div class = "nav-scroll">
         <ul>
-          <li id="datasci">Data Science
-            <ul class="dropdown">
-              <li><a href ='https://github.com/WalkerSimpson1/LSE-Data-Science-Project-1' target="_blank" rel="noopener noreferrer"><span>Weekday-Weekend London pollution comparison</span><span class = "icon-hover" data-tooltip="completed, click to view repository"><img class="status-icon" src="complete.png" alt="complete"></span></a></li>
-              <li><a href ='https://github.com/WalkerSimpson1/LSE-Data-Science-Project-2' target="_blank" rel="noopener noreferrer"><span>Peak-Offpeak Tube trip-time comparison</span><span class = "icon-hover" data-tooltip="completed, click to view repository"><img class="status-icon" src="complete.png" alt="complete"></span></a></li>
-              <li><a href ='https://github.com/WalkerSimpson1/Copy-of-LSE-DS105-Final-Group-Project' target="_blank" rel="noopener noreferrer"><span>IMDB vs Metacritic vs Tomatometer comparison to assess platform trends & biases</span><span class = "icon-hover" data-tooltip="completed, click to view repository"><img class="status-icon" src="complete.png" alt="complete"></span></a></li>
-              <li><a href ='Car-Project.html' target="_blank" rel="noopener noreferrer"><span>Multi API data transformation, merging, and analysis to determine my first car</span><span class = "icon-hover" data-tooltip="in progress, come back later"><img class="status-icon" src="in-progress.png" alt="in progress"></span></a></li>
+              <li id="datasci"><span class="nav-label">Data Science</span>
+                <ul class="dropdown">
+              <li><a href ='https://github.com/WalkerSimpson1/LSE-Data-Science-Project-1' target="_blank" rel="noopener noreferrer"><span>Weekday-Weekend London pollution comparison</span><span class="status-tag status-complete">Complete</span></a></li>
+              <li><a href ='https://github.com/WalkerSimpson1/LSE-Data-Science-Project-2' target="_blank" rel="noopener noreferrer"><span>Peak-Offpeak Tube trip-time comparison</span><span class="status-tag status-complete">Complete</span></a></li>
+              <li><a href ='https://github.com/WalkerSimpson1/Copy-of-LSE-DS105-Final-Group-Project' target="_blank" rel="noopener noreferrer"><span>IMDB vs Metacritic vs Tomatometer comparison to assess platform trends & biases</span><span class="status-tag status-complete">Complete</span></a></li>
+              <li><a href ='Car-Project.html' target="_blank" rel="noopener noreferrer"><span>Multi API data transformation, merging, and analysis to determine my first car</span><span class="status-tag status-in-progress">In Progress</span></a></li>
         </ul>
         </li>
-          <li id="engineering">Electrical Engineering
+          <li id="engineering"><span class="nav-label">Electrical Engineering</span>
             <ul class="dropdown">
-            <li><a href ='Oscilloscope-Project.html' target="_blank" rel="noopener noreferrer"><span>Adding a live ESP32-animated oscilloscope to my headphones</span><span class = "icon-hover" data-tooltip="in progress, come back later"><img class="status-icon" src="in-progress.png" alt="in progress"></span></a></li>
+            <li><a href ='Oscilloscope-Project.html' target="_blank" rel="noopener noreferrer"><span>Adding a live ESP32-animated oscilloscope to my headphones</span><span class="status-tag status-in-progress">In Progress</span></a></li>
         </ul>
         </li>
-          <li id="polisci">Political Science
+          <li id="polisci"><span class="nav-label">Political Science</span>
             <ul class = "dropdown">
-              <li><a href ='https://walkersimpson.substack.com/' target="_blank" rel="noopener noreferrer"><span>Legislative Tracking of UAS Civillian & Military Policy</span><span class = "icon-hover" data-tooltip="frequently updated, click to view substack"><img class="status-icon" src="in-progress.png" alt="in progress"></span></a></li>
+              <li><a href ='https://walkersimpson.substack.com/' target="_blank" rel="noopener noreferrer"><span>Legislative Tracking of UAS Civillian & Military Policy</span><span class="status-tag status-in-progress">In Progress</span></a></li>
             </ul>
           </li>
-          <li id="other">Other</li>
+          <li id="other"><span class="nav-label">Other</span></li>
         </ul>
+        </div>
     </nav>
-    </div>
-    <div class="main">
-      <div class="main-content">
-        <div class ="main-text"><p> <span class = 'mtext-big'>Hey - Welcome to my portfolio!</span> <br> <br> My name is Walker Simpson, I'm a Politics & Data Science student at the London School of Economics interested in emerging technologies and national defence. In this portfolio you can find a collection of my personal projects and work. <br> <br> Currently, I'm finishing my data science project where I transform data from multiple API's to determine my ideal first car, waiting for my audio-technica headphones to arrive so I can begin testing 3d-printed component-mounts, and researching to begin my UAS policy tracking on substack. <br> <br> In the near future, I plan to get a github foundations certification, and start learning SQL querying and database building. <br> <br> If you have any questions or would like to get in touch, feel free to reach out via the icons in the top-right.</p></div>
-        <div class ="main-photo"><img src = main-photo.jpg ></div>
-      </div>
+          <div class="main-content">
+
+            <section class="content-section" id="about">
+              <h2 class="section-heading">About Me</h2>
+              <div class="about-layout">
+                <div class="main-photo"><img src="main-photo.jpg" alt="Walker Simpson working in a fabrication workshop"></div>
+                <div class="main-text"><p><span class="mtext-big">Welcome to my portfolio!</span> <br> <br> My name is Walker Simpson, I'm a Politics & Data Science student at the London School of Economics interested in emerging technologies and national defence. In this portfolio you can find a collection of my personal projects and work. <br> <br> Currently, I'm finishing my data science project where I transform data from multiple API's to determine my ideal first car, waiting for my audio-technica headphones to arrive so I can begin testing 3d-printed component-mounts, and researching to begin my UAS policy tracking on substack. <br> <br> In the near future, I plan to get a github foundations certification, and start learning SQL querying and database building. <br> <br> If you have any questions or would like to get in touch, feel free to reach out via the icons in the top-right.</p></div>
+              </div>
+            </section>
+
+            <section class="content-section" id="recent-projects">
+              <h2 class="section-heading">Most Recent Projects</h2>
+              <p class="section-placeholder">Project entries go here — Part 2.</p>
+            </section>
+
+            <section class="content-section" id="in-progress-projects">
+              <h2 class="section-heading">In Progress</h2>
+              <p class="section-placeholder">Project entries go here — Part 3.</p>
+            </section>
+
+            <section class="content-section" id="certifications">
+              <h2 class="section-heading">Certifications</h2>
+              <p class="section-placeholder">Horizontally-scrolling strip goes here — Part 4.</p>
+            </section>
+
+          </div>
       </div>
     <script>
       document.addEventListener('click', (e) => {
@@ -64,14 +90,14 @@
       });
 
       function closeAll() {
-        document.querySelectorAll('nav > ul > li').forEach(item => {
+        document.querySelectorAll('.nav-scroll > ul > li').forEach(item => {
           const dropdown = item.querySelector('.dropdown');
           if (dropdown) dropdown.style.maxHeight = '0';
           item.classList.remove('hide-arrow', 'open', 'dimmed');
         });
       }
 
-      document.querySelectorAll('nav > ul > li').forEach(item => {
+      document.querySelectorAll('.nav-scroll > ul > li').forEach(item => {
         item.addEventListener('click', () => {
           const isOpen = item.classList.contains('open');
 
@@ -83,7 +109,7 @@
 
             dropdown.style.maxHeight = dropdown.scrollHeight + 'px';
             item.classList.add('open', 'hide-arrow');
-            document.querySelectorAll('nav > ul > li').forEach(other => {
+            document.querySelectorAll('.nav-scroll > ul > li').forEach(other => {
               if (other !== item) other.classList.add('dimmed');
             });
           }
