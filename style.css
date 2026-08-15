@@ -298,7 +298,7 @@
 
       .main-text p {
         margin-top: 0;
-        clamp: 15px 0.9rem + 0.3vw 18px
+        font-size: clamp(15px, 0.9rem + 0.3vw, 18px);
       }
 
     .mtext-big {
