@@ -65,10 +65,42 @@
               </div>
             </section>
 
-            <section class="content-section" id="recent-projects">
-              <h2 class="section-heading">Most Recent Projects</h2>
-              <p class="section-placeholder">Currently working on interface</p>
-            </section>
+          <section class="content-section" id="recent-projects">
+            <h2 class="section-heading">Most Recent Projects</h2>
+            <div class="project-grid">
+
+              <a class="project-card" href="https://github.com/WalkerSimpson1/LSE-Data-Science-Project-1" target="_blank" rel="noopener noreferrer">
+                <p class="project-subject">Data Science</p>
+                <h3 class="project-title">Weekday-Weekend London pollution comparison</h3>
+                <div class="glyph-wrap">
+                  <img class="glyph-frame glyph-idle" src="Car1.png" alt="Weekday-Weekend London pollution comparison glyph">
+                  <img class="glyph-frame glyph-hover" src="Car2.png" alt="" aria-hidden="true">
+                  <div class="glyph-description"><!-- add project description here --></div>
+                </div>
+              </a>
+
+              <a class="project-card" href="https://github.com/WalkerSimpson1/LSE-Data-Science-Project-2" target="_blank" rel="noopener noreferrer">
+                <p class="project-subject">Data Science</p>
+                <h3 class="project-title">Peak-Offpeak Tube trip-time comparison</h3>
+                <div class="glyph-wrap">
+                  <img class="glyph-frame glyph-idle" src="Train1.png" alt="Peak-Offpeak Tube trip-time comparison glyph">
+                  <img class="glyph-frame glyph-hover" src="Train2.png" alt="" aria-hidden="true">
+                  <div class="glyph-description"><!-- add project description here --></div>
+                </div>
+              </a>
+
+              <a class="project-card" href="https://github.com/WalkerSimpson1/Copy-of-LSE-DS105-Final-Group-Project" target="_blank" rel="noopener noreferrer">
+                <p class="project-subject">Data Science</p>
+                <h3 class="project-title">IMDB vs Metacritic vs Tomatometer comparison</h3>
+                <div class="glyph-wrap">
+                  <img class="glyph-frame glyph-idle" src="Film1.png" alt="IMDB vs Metacritic vs Tomatometer comparison glyph">
+                  <img class="glyph-frame glyph-hover" src="Film2.png" alt="" aria-hidden="true">
+                  <div class="glyph-description"><!-- add project description here --></div>
+                </div>
+              </a>
+
+            </div>
+          </section>
 
             <section class="content-section" id="in-progress-projects">
               <h2 class="section-heading">In Progress</h2>
@@ -120,6 +152,25 @@
               });
             });
       });
+
+document.querySelectorAll('.glyph-wrap').forEach(glyph => {
+  glyph.addEventListener('click', (e) => {
+    if (window.matchMedia('(hover: none)').matches) {
+      if (!glyph.classList.contains('is-active')) {
+        e.preventDefault();
+        document.querySelectorAll('.glyph-wrap.is-active').forEach(g => g.classList.remove('is-active'));
+        glyph.classList.add('is-active');
+      }
+    }
+  });
+});
+
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('.glyph-wrap')) {
+    document.querySelectorAll('.glyph-wrap.is-active').forEach(g => g.classList.remove('is-active'));
+  }
+});
+
 </script>
     <div class="footer">
       Coded by Walker - <a href="https://github.com/WalkerSimpson1/WalkerSimpson1.github.io" target="_blank">Website Repository</a>

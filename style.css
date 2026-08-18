@@ -348,15 +348,18 @@
           opacity: 0.75;
           }
 
-  @media (max-width: 600px) {
-  nav ul li {
-    font-size: 14px;
-    padding: 4px 8px;
-    }
-  .about-layout {
-    flex-direction: column;
+@media (max-width: 600px) {
+nav ul li {
+  font-size: 14px;
+  padding: 4px 8px;
   }
-  }
+.about-layout {
+  flex-direction: column;
+}
+.project-grid {
+  grid-template-columns: 1fr;
+}
+}
 
 .content-section {
   padding-bottom: 36px;
@@ -383,4 +386,108 @@
   margin: 0;
 }
 
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  padding: 20px 12px;
+  border: 1px solid rgba(22, 35, 59, 0.15);
+  border-radius: 6px;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+  border-color: var(--accent);
+  box-shadow: inset 0 0 0 2px var(--accent);
+}
+
+.project-subject {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+  opacity: 0.5;
+  margin: 0 0 6px 0;
+}
+
+.project-title {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ink);
+  margin: 0 0 18px 0;
+  line-height: 1.35;
+}
+
+.glyph-wrap {
+  position: relative;
+  width: 128px;
+  height: 128px;
+}
+
+.glyph-frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  transition: opacity 0.15s ease;
+}
+
+.glyph-hover {
+  opacity: 0;
+}
+
+.glyph-wrap:hover .glyph-idle,
+.glyph-wrap.is-active .glyph-idle {
+  opacity: 0;
+}
+
+.glyph-wrap:hover .glyph-hover,
+.glyph-wrap.is-active .glyph-hover {
+  opacity: 1;
+}
+
+.glyph-description {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: 220px;
+  min-height: 20px;
+  padding: 8px 12px;
+  background-color: white;
+  border: 1px solid var(--ink);
+  border-radius: 4px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  color: var(--ink);
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.15s ease;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.glyph-wrap:hover .glyph-description,
+.glyph-wrap.is-active .glyph-description {
+  opacity: 1;
+  visibility: visible;
+}
 
