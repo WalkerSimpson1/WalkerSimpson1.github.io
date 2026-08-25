@@ -139,10 +139,27 @@
             </div>
           </section>
 
-            <section class="content-section" id="certifications">
-              <h2 class="section-heading">Certifications</h2>
-              <p class="section-placeholder">Planned horizontally-scrolling strip, soon to be implemented.</p>
-            </section>
+          <section class="content-section" id="certifications">
+            <h2 class="section-heading">Certifications</h2>
+            <div class="cert-strip">
+
+              <div class="cert-card" data-cert-image="excel-certificate.jpg">
+                <img class="cert-icon" src="excel-icon-only.png" alt="Excel Essential Training certification badge">
+                <p class="cert-title">Excel Essential Training</p>
+              </div>
+
+              <div class="cert-card" data-cert-image="powerpoint-certificate.jpg">
+                <img class="cert-icon" src="powerpoint-icon-only.png" alt="Learning PowerPoint Desktop certification badge">
+                <p class="cert-title">Learning PowerPoint Desktop</p>
+              </div>
+
+            </div>
+          </section>
+
+          <div class="cert-modal-overlay" id="certModalOverlay">
+            <button class="cert-modal-close" id="certModalClose" aria-label="Close">&times;</button>
+            <img class="cert-modal-image" id="certModalImage" src="" alt="Certification document">
+          </div>
 
           </div>
       </div>
@@ -201,6 +218,26 @@ document.addEventListener('click', (e) => {
   if (!e.target.closest('.glyph-wrap')) {
     document.querySelectorAll('.glyph-wrap.is-active').forEach(g => g.classList.remove('is-active'));
   }
+});
+
+document.querySelectorAll('.cert-card').forEach(card => {
+  card.addEventListener('click', () => {
+    const imgSrc = card.getAttribute('data-cert-image');
+    document.getElementById('certModalImage').src = imgSrc;
+    document.getElementById('certModalOverlay').classList.add('open');
+  });
+});
+
+function closeCertModal() {
+  document.getElementById('certModalOverlay').classList.remove('open');
+}
+
+document.getElementById('certModalClose').addEventListener('click', closeCertModal);
+document.getElementById('certModalOverlay').addEventListener('click', (e) => {
+  if (e.target.id === 'certModalOverlay') closeCertModal();
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeCertModal();
 });
 
 </script>
