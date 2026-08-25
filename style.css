@@ -496,6 +496,7 @@ nav ul li {
   gap: 20px;
   overflow-x: auto;
   padding-bottom: 8px;
+  justify-content: center;
 }
 
 .cert-card {
