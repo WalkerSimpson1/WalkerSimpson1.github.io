@@ -297,15 +297,28 @@
       }
 
       .main-text p {
-        margin-top: 0;
-        font-size: clamp(15px, 0.9rem + 0.3vw, 18px);
+        font-family: 'Source Serif 4', serif;
+        font-size: 17px;
+        font-weight: 500;
+        color: var(--ink);
+        margin: 0 0 18px 0;
+        line-height: 1.35;
       }
 
-    .mtext-big {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.5em;
-      font-weight: 700;
-    }
+      .main-text a {
+        color: var(--accent);
+        text-underline-offset: 2px;
+        font-weight: 550;
+        text-decoration: none;
+      }
+
+      .main-text a:visited {
+        color: var(--accent);
+      }
+
+      .main-text a:hover {
+        opacity: 0.75;
+      }
 
     .about-layout {
       display: flex;
