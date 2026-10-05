@@ -889,6 +889,7 @@
     gap: 16px;
     padding-bottom: 8px;
     scroll-snap-type: x mandatory;
+    touch-action: pan-x;
   }
   .project-card {
     flex: 0 0 auto;
