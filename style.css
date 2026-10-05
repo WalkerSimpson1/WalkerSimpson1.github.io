@@ -61,13 +61,23 @@
 
       .mobile-nav-toggle {
         display: none;
+        align-items: center;
+        gap: 8px;
         background: none;
         border: none;
         color: white;
-        font-size: 28px;
         cursor: pointer;
         padding: 0;
-      } 
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 13px;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+      }
+
+      .mobile-nav-toggle i {
+        font-size: 22px;
+      }
 
           nav ul {
             list-style: none;
@@ -800,6 +810,14 @@
 
 @media (max-width: 600px) {
 
+  .main-content {
+    width: 100%;
+  }
+
+  .project-page {
+    padding: 16px 0;
+  }
+
   body {
     height: auto;
     overflow: visible;
@@ -820,8 +838,7 @@
   }
 
   .mobile-nav-toggle {
-    display: inline-flex;
-    align-items: center;
+    display: flex;
   }
 
   .index-nav {
@@ -870,10 +887,12 @@
     overflow-x: auto;
     gap: 16px;
     padding-bottom: 8px;
+    scroll-snap-type: x mandatory;
   }
   .project-card {
     flex: 0 0 auto;
     width: 220px;
+    scroll-snap-align: center;
   }
 
   .project-page-content {
