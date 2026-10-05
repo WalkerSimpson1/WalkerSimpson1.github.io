@@ -884,6 +884,7 @@
 
   .project-grid {
     display: flex;
+    align-items: flex-start;
     overflow-x: auto;
     gap: 16px;
     padding-bottom: 8px;
@@ -892,7 +893,35 @@
   .project-card {
     flex: 0 0 auto;
     width: 220px;
-    scroll-snap-align: center;
+    scroll-snap-align: start;
+  }
+
+  .glyph-wrap.is-active {
+    width: 100%;
+    height: auto;
+    min-height: 128px;
+  }
+
+  .glyph-wrap.is-active .glyph-frame {
+    display: none;
+  }
+
+  .glyph-wrap.is-active .glyph-description {
+    position: static;
+    transform: none;
+    width: 100%;
+    max-width: none;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    box-sizing: border-box;
+  }
+
+  .glyph-wrap.is-active .glyph-description::before {
+    content: "Click here to go to project page";
+    display: block;
+    font-weight: 700;
+    margin-bottom: 8px;
   }
 
   .project-page-content {
