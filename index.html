@@ -217,24 +217,6 @@
             });
       });
 
-document.querySelectorAll('.glyph-wrap').forEach(glyph => {
-  glyph.addEventListener('click', (e) => {
-    if (window.matchMedia('(hover: none)').matches) {
-      if (!glyph.classList.contains('is-active')) {
-        e.preventDefault();
-        document.querySelectorAll('.glyph-wrap.is-active').forEach(g => g.classList.remove('is-active'));
-        glyph.classList.add('is-active');
-      }
-    }
-  });
-});
-
-document.addEventListener('click', (e) => {
-  if (!e.target.closest('.glyph-wrap')) {
-    document.querySelectorAll('.glyph-wrap.is-active').forEach(g => g.classList.remove('is-active'));
-  }
-});
-
 document.querySelectorAll('.cert-card').forEach(card => {
   card.addEventListener('click', () => {
     const imgSrc = card.getAttribute('data-cert-image');
