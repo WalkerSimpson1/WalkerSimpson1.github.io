@@ -16,17 +16,21 @@
     <h1>Walker Simpson</h1>
     <p class="header-tagline">Political Science & Data Science — London School of Economics</p>
   </div>
-  <div class="header-icons">
-    <a href="https://www.linkedin.com/in/walker-simpson-a524122a1" target="_blank" aria-label="LinkedIn">
-      <i class="fa-brands fa-linkedin"></i>
-    </a>
-    <a href="https://github.com/WalkerSimpson1" target="_blank" aria-label="GitHub">
-      <i class="fa-brands fa-github"></i>
-    </a>
-    <a href="mailto:walkerwusimpson@gmail.com" aria-label="Email">
-      <i class="fa-solid fa-envelope"></i>
-    </a>
-  </div>
+<div class="header-icons">
+  <a href="https://www.linkedin.com/in/walker-simpson-a524122a1" target="_blank" aria-label="LinkedIn">
+    <i class="fa-brands fa-linkedin"></i>
+  </a>
+  <a href="https://github.com/WalkerSimpson1" target="_blank" aria-label="GitHub">
+    <i class="fa-brands fa-github"></i>
+  </a>
+  <a href="mailto:walkerwusimpson@gmail.com" aria-label="Email">
+    <i class="fa-solid fa-envelope"></i>
+  </a>
+  <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Open menu">
+    <i class="fa-solid fa-bars"></i>
+    <span>Browse by Category</span>
+  </button>
+</div>
 </div>
     <div class = "main">
     <nav class = "index-nav">
@@ -55,6 +59,7 @@
         </ul>
         </div>
     </nav>
+    <div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
           <div class="main-content">
 
             <section class="content-section" id="about">
@@ -222,24 +227,6 @@
             });
       });
 
-document.querySelectorAll('.glyph-wrap').forEach(glyph => {
-  glyph.addEventListener('click', (e) => {
-    if (window.matchMedia('(hover: none)').matches) {
-      if (!glyph.classList.contains('is-active')) {
-        e.preventDefault();
-        document.querySelectorAll('.glyph-wrap.is-active').forEach(g => g.classList.remove('is-active'));
-        glyph.classList.add('is-active');
-      }
-    }
-  });
-});
-
-document.addEventListener('click', (e) => {
-  if (!e.target.closest('.glyph-wrap')) {
-    document.querySelectorAll('.glyph-wrap.is-active').forEach(g => g.classList.remove('is-active'));
-  }
-});
-
 document.querySelectorAll('.cert-card').forEach(card => {
   card.addEventListener('click', () => {
     const imgSrc = card.getAttribute('data-cert-image');
@@ -258,6 +245,30 @@ document.getElementById('certModalOverlay').addEventListener('click', (e) => {
 });
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') closeCertModal();
+});
+
+const mobileNavToggle = document.getElementById('mobileNavToggle');
+const indexNavEl = document.querySelector('.index-nav');
+const mobileNavBackdrop = document.getElementById('mobileNavBackdrop');
+
+function closeMobileNav() {
+  indexNavEl.classList.remove('mobile-open');
+  mobileNavBackdrop.classList.remove('open');
+}
+
+mobileNavToggle.addEventListener('click', () => {
+  if (indexNavEl.classList.contains('mobile-open')) {
+    closeMobileNav();
+  } else {
+    indexNavEl.classList.add('mobile-open');
+    mobileNavBackdrop.classList.add('open');
+  }
+});
+
+mobileNavBackdrop.addEventListener('click', closeMobileNav);
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeMobileNav();
 });
 
 </script>
