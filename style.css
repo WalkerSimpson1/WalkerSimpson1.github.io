@@ -460,6 +460,10 @@
   gap: 24px;
 }
 
+#recent-projects .project-grid {
+  grid-template-columns: repeat(4, 1fr);
+}
+
 .project-card {
   display: flex;
   flex-direction: column;
